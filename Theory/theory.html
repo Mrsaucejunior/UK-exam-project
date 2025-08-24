@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory Questions</title>
+
+    <style>
+
+body {
+    background-image: url(img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+        .question-container {
+    width: 80%;
+    background-color: rgb(0, 0, 0);
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    color: white;
+}
+
+#answer {
+    width: 90%;
+    height: 150px;
+    padding: 11px;
+    font-size: 16px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+    </style>
+
+</head>
+<body>
+    <div class="question-container">
+        <h2 id="question"></h2>
+        <textarea id="answer" placeholder="Type your answer here..."></textarea>
+        <button id="download-pdf">Submit</button>
+        <div id="feedback"></div>
+    </div>
+                                                                
+    <script src="theory.js"></script>
+</body>
+</html>
