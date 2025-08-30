@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <h1> Welcome To UK GENERAL PRINTING INSTITUTION</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="profile">
+            </div>
+            <h2>Hello Computer Literate!</h2>
+
+            <input type="text" name="username" id="username" placeholder="Full name" maxlength="30" minlength="4">
+            <p id="errormsg" >please input your name</p>
+
+            <input type="text" id="idNum" placeholder="ID Number" maxlength="12" minlength="3">
+            <p id="errormsg1" >please input your id Number</p>
+            
+            <button onclick="redirect()">
+                <a>Submit</a>
+            </button>
+
+            <div class="forget">
+                <div class="remind">
+                    <input type="checkbox" name="remind" class="input"><label for="remind">Remember Me</label>
+                </div>
+                <span> <a href="#">Forget Password </a> </span>
+            </div>
+        </div>
+    </main>
+<script>
+    window.onload = () => {
+    document.getElementById("username").value = "";
+    document.getElementById("idNum").value = "";
+    };
+
+    function redirect() {
+        const username = document.getElementById('username');
+        const id = document.getElementById('idNum');
+        const errormsg = document.getElementById('errormsg');
+        const errormsg1 = document.getElementById('errormsg1');
+
+        username.addEventListener('click', () => {
+            errormsg.style.display = "none";
+            id.style.marginTop = "1rem";
+        })
+
+        id.addEventListener('click', () => {
+            errormsg1.style.display = "none";
+
+        })
+
+        if (username.value === "" && id.value === "") {
+            id.style.margin = "0";
+            errormsg.style.display = "block";
+            errormsg1.style.display = "block";
+        }else if (username.value === "") {
+             errormsg.style.display = "block";
+        }else if (id.value === "") {
+            errormsg1.style.display = "block";
+        }else {  
+            localStorage.setItem("username", username.value);
+            window.location.href="./Rules and option/option.html";
+        }
+    }
+
+
+</script>
+</body>
+</html>
